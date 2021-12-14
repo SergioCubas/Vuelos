@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Agencia_BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tb_aerolinea">
+    <Key>
+      <PropertyRef Name="idAerolinea" />
+    </Key>
+    <Property Name="idAerolinea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ruc" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_aeropuerto">
+    <Key>
+      <PropertyRef Name="idAeropuerto" />
+    </Key>
+    <Property Name="idAeropuerto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idPais" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_asiento">
+    <Key>
+      <PropertyRef Name="idAsiento" />
+    </Key>
+    <Property Name="idAsiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" />
+    <Property Name="fila" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="letra" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="precio" Type="money" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_avion">
+    <Key>
+      <PropertyRef Name="idAvion" />
+    </Key>
+    <Property Name="idAvion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="capacidad" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idAerolinea" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_departamento">
+    <Key>
+      <PropertyRef Name="id_departamento" />
+    </Key>
+    <Property Name="id_departamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="foto" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Tb_Destino">
+    <Key>
+      <PropertyRef Name="idDestino" />
+    </Key>
+    <Property Name="idDestino" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idAeropuerto" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_pago">
+    <Key>
+      <PropertyRef Name="idPago" />
+    </Key>
+    <Property Name="idPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="tipo_comprobante" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="num_comprobante" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="medio_pago" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idPasajero" Type="int" />
+    <Property Name="idReserva" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_pais">
+    <Key>
+      <PropertyRef Name="idPais" />
+    </Key>
+    <Property Name="idPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="id_departamento" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_pasajero">
+    <Key>
+      <PropertyRef Name="idPasajero" />
+    </Key>
+    <Property Name="idPasajero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo_documento" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="num_documento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="genero" Type="char" MaxLength="1" />
+    <Property Name="F_Nacimiento" Type="datetime" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idPais" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_reserva">
+    <Key>
+      <PropertyRef Name="idReserva" />
+    </Key>
+    <Property Name="idReserva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Reserva" Type="datetime" />
+    <Property Name="F_Salida" Type="datetime" />
+    <Property Name="F_Llegada" Type="datetime" />
+    <Property Name="observaciones" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idPasajero" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_vuelo">
+    <Key>
+      <PropertyRef Name="idVuelo" />
+    </Key>
+    <Property Name="idVuelo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Registro" Type="datetime" />
+    <Property Name="F_Modificacion" Type="datetime" />
+    <Property Name="estado" Type="int" />
+    <Property Name="idAeropuerto" Type="int" />
+    <Property Name="idReserva" Type="int" />
+    <Property Name="idAsiento" Type="int" />
+    <Property Name="idAvion" Type="int" />
+    <Property Name="idDestino" Type="int" />
+  </EntityType>
+  <Association Name="FK__Tb_aeropu__idPai__45F365D3">
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="0..1" />
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="Tb_aeropuerto">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_avion__idAero__59FA5E80">
+    <End Role="Tb_aerolinea" Type="Self.Tb_aerolinea" Multiplicity="0..1" />
+    <End Role="Tb_avion" Type="Self.Tb_avion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aerolinea">
+        <PropertyRef Name="idAerolinea" />
+      </Principal>
+      <Dependent Role="Tb_avion">
+        <PropertyRef Name="idAerolinea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_Destin__idAer__628FA481">
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="0..1" />
+    <End Role="Tb_Destino" Type="Self.Tb_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aeropuerto">
+        <PropertyRef Name="idAeropuerto" />
+      </Principal>
+      <Dependent Role="Tb_Destino">
+        <PropertyRef Name="idAeropuerto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pago__idPasaj__5070F446">
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="0..1" />
+    <End Role="Tb_pago" Type="Self.Tb_pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pasajero">
+        <PropertyRef Name="idPasajero" />
+      </Principal>
+      <Dependent Role="Tb_pago">
+        <PropertyRef Name="idPasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pago__idReser__5165187F">
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="0..1" />
+    <End Role="Tb_pago" Type="Self.Tb_pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_reserva">
+        <PropertyRef Name="idReserva" />
+      </Principal>
+      <Dependent Role="Tb_pago">
+        <PropertyRef Name="idReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pais__id_depa__3F466844">
+    <End Role="Tb_departamento" Type="Self.Tb_departamento" Multiplicity="0..1" />
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_departamento">
+        <PropertyRef Name="id_departamento" />
+      </Principal>
+      <Dependent Role="Tb_pais">
+        <PropertyRef Name="id_departamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pasaje__idPai__4BAC3F29">
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="0..1" />
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="Tb_pasajero">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAero__656C112C">
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aeropuerto">
+        <PropertyRef Name="idAeropuerto" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAeropuerto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAsie__6754599E">
+    <End Role="Tb_asiento" Type="Self.Tb_asiento" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_asiento">
+        <PropertyRef Name="idAsiento" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAsiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAvio__68487DD7">
+    <End Role="Tb_avion" Type="Self.Tb_avion" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_avion">
+        <PropertyRef Name="idAvion" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAvion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idDest__693CA210">
+    <End Role="Tb_Destino" Type="Self.Tb_Destino" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Destino">
+        <PropertyRef Name="idDestino" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idDestino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idRese__66603565">
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_reserva">
+        <PropertyRef Name="idReserva" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_idPasajero">
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="0..1" />
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pasajero">
+        <PropertyRef Name="idPasajero" />
+      </Principal>
+      <Dependent Role="Tb_reserva">
+        <PropertyRef Name="idPasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListaPasajeroPorPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pais" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ListarAsientosDisponiblesPorRucAerolinea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ruc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ListarPasajeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarPasajerosPorFechaReserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="finicio" Type="varchar" Mode="In" />
+    <Parameter Name="ffin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ListarVuelos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarVuelosDeAerolineasPorFechaRegistro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="finicio" Type="varchar" Mode="In" />
+    <Parameter Name="ffin" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="Agencia_BDModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_aerolinea" EntityType="Self.Tb_aerolinea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_aeropuerto" EntityType="Self.Tb_aeropuerto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_asiento" EntityType="Self.Tb_asiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_avion" EntityType="Self.Tb_avion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_departamento" EntityType="Self.Tb_departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_Destino" EntityType="Self.Tb_Destino" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_pago" EntityType="Self.Tb_pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_pais" EntityType="Self.Tb_pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_pasajero" EntityType="Self.Tb_pasajero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_reserva" EntityType="Self.Tb_reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_vuelo" EntityType="Self.Tb_vuelo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Tb_aeropu__idPai__45F365D3" Association="Self.FK__Tb_aeropu__idPai__45F365D3">
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_avion__idAero__59FA5E80" Association="Self.FK__Tb_avion__idAero__59FA5E80">
+      <End Role="Tb_aerolinea" EntitySet="Tb_aerolinea" />
+      <End Role="Tb_avion" EntitySet="Tb_avion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_Destin__idAer__628FA481" Association="Self.FK__Tb_Destin__idAer__628FA481">
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+      <End Role="Tb_Destino" EntitySet="Tb_Destino" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pago__idPasaj__5070F446" Association="Self.FK__Tb_pago__idPasaj__5070F446">
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+      <End Role="Tb_pago" EntitySet="Tb_pago" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pago__idReser__5165187F" Association="Self.FK__Tb_pago__idReser__5165187F">
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+      <End Role="Tb_pago" EntitySet="Tb_pago" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pais__id_depa__3F466844" Association="Self.FK__Tb_pais__id_depa__3F466844">
+      <End Role="Tb_departamento" EntitySet="Tb_departamento" />
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pasaje__idPai__4BAC3F29" Association="Self.FK__Tb_pasaje__idPai__4BAC3F29">
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAero__656C112C" Association="Self.FK__Tb_vuelo__idAero__656C112C">
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAsie__6754599E" Association="Self.FK__Tb_vuelo__idAsie__6754599E">
+      <End Role="Tb_asiento" EntitySet="Tb_asiento" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAvio__68487DD7" Association="Self.FK__Tb_vuelo__idAvio__68487DD7">
+      <End Role="Tb_avion" EntitySet="Tb_avion" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idDest__693CA210" Association="Self.FK__Tb_vuelo__idDest__693CA210">
+      <End Role="Tb_Destino" EntitySet="Tb_Destino" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idRese__66603565" Association="Self.FK__Tb_vuelo__idRese__66603565">
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_idPasajero" Association="Self.FK_idPasajero">
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

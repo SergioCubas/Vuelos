@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<body>
+    <style>
+        .container-table {
+            margin-top: 80px;
+        }
+
+            .container-table h3 {
+                font-size: 3rem;
+                font-style: italic;
+                line-height: 2rem;
+                font-weight: bold;
+                color: rgb(27, 0, 136);
+                margin-bottom: 30px;
+            }
+    </style>
+
+
+
+
+    <div class="row">
+        <div class="container">
+            <div class="row container-table">
+
+                <div class="col-12">
+                    <h3>LISTADO DE VUELOS</h3>
+                </div>
+                @using (Html.BeginForm("Buscar", "Vuelos"))
+
+                {
+
+            <table cellpading="2" cellspacing="2" border="1" width="600">
+
+                <tr>
+
+                    <th>Seleccione tipo de criterio</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <input type="radio" name="condicion" value="PorFechaSalida" />
+
+                        <span>Por fecha de salida</span>
+
+                    </td>
+                    <td>
+
+                        <input type="radio" name="condicion" value="PorFechaLlegada" />
+
+                        <span>Por fecha de llegada</span>
+
+                    </td>
+                    <td>
+
+                        <input type="radio" name="condicion" value="PorCiudadOrigen" />
+
+                        <span>Por Ciudad de origen</span>
+
+                    </td>
+
+                    <td>
+
+                        <input type="radio" name="condicion" value="PorCiudadDestino" />
+
+                        <span>Por Ciudad de destino</span>
+
+                    </td>
+
+                    <td>
+
+                        <input type="radio" name="condicion" value="PorAerolinea" />
+
+                        <span>Por Aerolinea</span>
+
+                    </td>
+                    <td>
+
+                        <input type="radio" name="condicion" value="Todas" checked="true" />
+
+                        <span>Todas</span>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>Fecha inicio</span>
+                        <input type="date" name="criterio1" />
+                    </td>
+                    <td>
+                        <span>Fecha fin</span>
+                        <input type="date" name="criterio2" />
+                    </td>
+                    <td>
+
+                        @Html.DropDownList("cboCiudadOrigen", (IEnumerable<SelectListItem>)ViewBag.ListarCiudadOrigen)
+
+                    </td>
+                    <td>
+
+                        @Html.DropDownList("cboCiudadDestino", (IEnumerable<SelectListItem>)ViewBag.ListarCiudadDestino)
+
+                    </td>
+                    <td>
+
+                        @Html.DropDownList("cboAerolinea", (IEnumerable<SelectListItem>)ViewBag.ListarAerolinea)
+
+                    </td>
+
+                    <td>
+
+                        <input type="submit" name="Buscar" />
+
+                    </td>
+
+
+                </tr>
+
+            </table>
+
+
+
+                }
+
+                <br />
+
+                <br />
+
+
+                <div class="col-12">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Aerolinea</th>
+                                <th scope="col">Aeropuerto Origen</th>
+                                <th scope="col">País Origen</th>
+                                <th scope="col">Ciudad Origen</th>
+                                <th scope="col">Fecha Salida</th>
+                                <th scope="col">Aeropueto destino</th>
+                                <th scope="col">País destino</th>
+                                <th scope="col">Ciudad destino</th>
+                                <th scope="col">Fecha Llegada</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var vuelos in ViewBag.ListarVuelos)
+
+                            {
+
+                            <tr>
+                                <th>@vuelos.Nombre_Aerolinea</th>
+                                <th>@vuelos.NombreAeropuertoOrigen</th>
+                                <th>@vuelos.Nombre_PaisOrigen</th>
+                                <th>@vuelos.Nombre_Departamento</th>
+                                <th>@vuelos.Fecha_Salida</th>
+                                <th>@vuelos.NombreAeropuertoDestino</th>
+                                <th>@vuelos.Nombre_PaisDestino</th>
+                                <th>@vuelos.Nombre_departamentoDestino</th>
+                                <th>@vuelos.Fecha_Llegada</th>
+
+
+
+                            </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+

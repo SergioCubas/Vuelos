@@ -1,0 +1,90 @@
+﻿@model Proyecto_MVC.Models.Tb_pago
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medio_pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medio_pago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tb_pasajero.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tb_pasajero.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tb_reserva.observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tb_reserva.observaciones)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPago }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

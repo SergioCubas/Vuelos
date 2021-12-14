@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WCF_Reservas" />
+  <xs:element name="GetAllVuelos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllVuelosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="GetAllVuelosResult" nillable="true" type="q1:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorAerolinea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aerolinea" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorAerolineaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarPorAerolineaResult" nillable="true" type="q2:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorCiudadOrigen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ciudad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorCiudadOrigenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarPorCiudadOrigenResult" nillable="true" type="q3:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorCiudadDestino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ciudad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorCiudadDestinoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarPorCiudadDestinoResult" nillable="true" type="q4:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorFechaSalida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fecha1" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fecha2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorFechaSalidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarPorFechaSalidaResult" nillable="true" type="q5:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorFechaLlegada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fecha1" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fecha2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPorFechaLlegadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarPorFechaLlegadaResult" nillable="true" type="q6:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamentos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarDepartamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarDepartamentosResult" nillable="true" type="q7:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAerolineas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarAerolineasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WCF_Reservas" minOccurs="0" name="ListarAerolineasResult" nillable="true" type="q8:ArrayOfVueloBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_Reservas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_Reservas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfVueloBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VueloBE" nillable="true" type="tns:VueloBE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVueloBE" nillable="true" type="tns:ArrayOfVueloBE" />
+  <xs:complexType name="VueloBE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha_Llegada" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fecha_Salida" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fila" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAerolinea" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAeropuerto" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAsiento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAvion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDepart" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDepartamento" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDestino" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPais" type="xs:int" />
+      <xs:element minOccurs="0" name="IdReserva" type="xs:int" />
+      <xs:element minOccurs="0" name="Letra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAeropuertoDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAeropuertoOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre_Aerolinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre_Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre_PaisDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre_PaisOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre_departamentoDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Precio" type="xs:double" />
+      <xs:element minOccurs="0" name="Tipo_Vuelo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VueloBE" nillable="true" type="tns:VueloBE" />
+</xs:schema>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Proyecto_MVC.Models.Tb_asiento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimieto de asientos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.letra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.letra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F_Registro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F_Modificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idAsiento }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idAsiento }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idAsiento })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Volver", "Mantenimiento", "Home")
+</div>

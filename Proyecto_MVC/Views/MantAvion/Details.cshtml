@@ -1,0 +1,66 @@
+﻿@model Proyecto_MVC.Models.Tb_avion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_avion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.capacidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tb_aerolinea.ruc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tb_aerolinea.ruc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAvion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

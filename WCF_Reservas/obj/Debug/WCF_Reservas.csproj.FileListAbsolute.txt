@@ -1,0 +1,60 @@
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\CUBOSOLUCIONES01\Desktop\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csprojAssemblyReference.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\Entrega 2\EParcial_PrietoGuevara\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\HP\Documents\SergioCubas\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Avance3_CubasBernal\ReservaPasajeWCF_Entity\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
+C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache

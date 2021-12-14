@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServicioVuelo" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCF_Reservas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioVuelo_GetAllVuelos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVuelos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_GetAllVuelos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVuelosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorAerolinea_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorAerolinea" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorAerolinea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorAerolineaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorCiudadOrigen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCiudadOrigen" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorCiudadOrigen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCiudadOrigenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorCiudadDestino_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCiudadDestino" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorCiudadDestino_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorCiudadDestinoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorFechaSalida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorFechaSalida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorFechaSalida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorFechaSalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorFechaLlegada_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorFechaLlegada" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarPorFechaLlegada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPorFechaLlegadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarAerolineas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAerolineas" />
+  </wsdl:message>
+  <wsdl:message name="IServicioVuelo_ListarAerolineas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAerolineasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioVuelo">
+    <wsdl:operation name="GetAllVuelos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/GetAllVuelos" message="tns:IServicioVuelo_GetAllVuelos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/GetAllVuelosResponse" message="tns:IServicioVuelo_GetAllVuelos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorAerolinea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorAerolinea" message="tns:IServicioVuelo_ListarPorAerolinea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorAerolineaResponse" message="tns:IServicioVuelo_ListarPorAerolinea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCiudadOrigen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorCiudadOrigen" message="tns:IServicioVuelo_ListarPorCiudadOrigen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorCiudadOrigenResponse" message="tns:IServicioVuelo_ListarPorCiudadOrigen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCiudadDestino">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorCiudadDestino" message="tns:IServicioVuelo_ListarPorCiudadDestino_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorCiudadDestinoResponse" message="tns:IServicioVuelo_ListarPorCiudadDestino_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorFechaSalida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorFechaSalida" message="tns:IServicioVuelo_ListarPorFechaSalida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorFechaSalidaResponse" message="tns:IServicioVuelo_ListarPorFechaSalida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorFechaLlegada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorFechaLlegada" message="tns:IServicioVuelo_ListarPorFechaLlegada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarPorFechaLlegadaResponse" message="tns:IServicioVuelo_ListarPorFechaLlegada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarDepartamentos" message="tns:IServicioVuelo_ListarDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarDepartamentosResponse" message="tns:IServicioVuelo_ListarDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAerolineas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioVuelo/ListarAerolineas" message="tns:IServicioVuelo_ListarAerolineas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioVuelo/ListarAerolineasResponse" message="tns:IServicioVuelo_ListarAerolineas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioVuelo" type="tns:IServicioVuelo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllVuelos">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/GetAllVuelos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorAerolinea">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarPorAerolinea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCiudadOrigen">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarPorCiudadOrigen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorCiudadDestino">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarPorCiudadDestino" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorFechaSalida">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarPorFechaSalida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPorFechaLlegada">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarPorFechaLlegada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAerolineas">
+      <soap:operation soapAction="http://tempuri.org/IServicioVuelo/ListarAerolineas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioVuelo">
+    <wsdl:port name="BasicHttpBinding_IServicioVuelo" binding="tns:BasicHttpBinding_IServicioVuelo">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCF_Reservas/ServicioVuelo/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

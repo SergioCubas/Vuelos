@@ -1,0 +1,58 @@
+﻿@model Proyecto_MVC.Models.Tb_pais
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_pais</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tb_departamento.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tb_departamento.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPais }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

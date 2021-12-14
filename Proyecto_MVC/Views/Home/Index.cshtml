@@ -1,0 +1,276 @@
+﻿@using Proyecto_MVC.Models;
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<style>
+    .jumbotron {
+        background-position: center;
+        background-size: cover;
+        border-radius: 0 !important;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+        .jumbotron h2 {
+            color: white;
+            font-weight: bold;
+        }
+
+        .jumbotron p {
+            color: white;
+            font-weight: bold;
+        }
+
+    .navbar-inverse {
+        background-color: rgb(16, 0, 79);
+    }
+
+        .navbar-inverse a {
+            color: white !important;
+        }
+
+    .btn-primary {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px dotted rgb(255, 255, 255);
+    }
+
+    .filter {
+        position: relative;
+        padding: 2%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0px 0.5rem 0.5rem;
+        box-shadow: rgb(0 0 0 / 10%) 0rem 0.25rem 0.5rem;
+        margin-bottom: 60px;
+    }
+
+        .filter p {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            font-weight: bold;
+            color: rgb(27, 0, 136);
+        }
+
+            .filter p svg {
+                width: auto;
+                margin-right: 10px;
+            }
+
+        .filter button {
+            background-color: rgb(232, 17, 75);
+            border: 2px solid white;
+            color: rgb(255, 255, 255);
+            width: 15%;
+            border-radius: 25px;
+        }
+
+        .filter .input-group {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+        .cards .card {
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(16 0 79 / 12%) 0px 0.125rem 0.5rem;
+            width: 30%;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+    .card-image {
+        width: 100%;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-content {
+        padding: 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    .card-content h3 {
+        color: rgb(16, 0, 79);
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .card-content small {
+        color: rgb(92, 92, 92);
+    }
+
+    .card-content p {
+        font-size: 23px;
+    }
+
+    .card-content small:nth-child(5) {
+        font-size: 10px;
+        margin-top: 15px;
+    }
+
+    .card-content small:nth-child(3) {
+        font-weight: bold;
+    }
+
+    .card a {
+        background-color: rgb(232, 17, 75);
+        border: 2px solid white;
+        color: rgb(255, 255, 255);
+        width: 95%;
+        border-radius: 25px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .card .badge {
+        background: #10004f;
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+</style>
+
+<div class="row">
+    <div class="jumbotron" style="background-image: url(https://images.pexels.com/photos/730778/pexels-photo-730778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+        <h2>
+            Ser reconocidos por ustedes, eso que nos hace volar
+        </h2>
+        <p class="lead">
+            Aerolínea Líder de Sudamérica World Travel Awards 2021
+        </p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Ver vuelos &raquo;</a></p>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+
+                <form class="filter">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 32 32" fill="none" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M14.8993 17.6342C15.1121 17.5527 15.3412 17.6098 15.5703 17.7892C15.7339 17.9441 15.7748 18.1562 15.693 18.4253L13.4757 24.6236L15.9302 24.0282C16.143 23.9467 16.2739 23.8733 16.323 23.7917L21.3139 15.4975C21.4203 15.3343 21.5267 15.2446 21.633 15.2202L28.7676 12.6512C29.504 12.3902 30.0522 12.015 30.4122 11.5257C30.7722 11.0363 30.8377 10.5062 30.6331 9.92715C30.5758 9.7722 30.494 9.60095 30.3713 9.41337C30.2486 9.22579 30.0604 9.07082 29.7985 8.94033C29.5367 8.80984 29.1604 8.75275 28.6858 8.7609C28.2113 8.77721 27.5813 8.91587 26.7876 9.17685L21.5185 11.069C21.363 11.1179 21.1994 11.1179 21.0439 11.0526C20.8884 10.9874 20.7821 10.8732 20.7248 10.7182C20.6676 10.5388 20.6839 10.3676 20.7657 10.2208C20.8476 10.074 20.9621 9.97609 21.1258 9.92715L26.3949 8.03507C29.2749 7.03192 31.0667 7.53757 31.7867 9.5357C32.024 10.1963 32.0649 10.7917 31.9013 11.3299C31.7458 11.8682 31.4268 12.3494 30.9522 12.7735C30.4777 13.1976 29.8804 13.5401 29.1686 13.8011L22.2712 16.2886L17.3539 24.4687C17.1985 24.7541 16.8221 25.0069 16.2411 25.219L13.0339 25.9693C12.6575 26.0508 12.3875 25.9693 12.1993 25.7328C12.0111 25.4963 11.9784 25.219 12.0766 24.9009L14.0975 19.2164L9.30291 20.8802C7.98563 21.3287 6.75019 21.3695 5.59654 20.9943C4.4429 20.6273 3.55924 19.8852 2.92105 18.7842L0.188275 13.9642C-0.17991 13.2791 -0.00808601 12.8061 0.703738 12.5451L2.80649 11.7948C3.23195 11.6398 3.62469 11.7051 3.99287 11.9905L7.75652 14.7961L12.4693 13.0589L6.48015 7.21134C6.30015 6.97483 6.21835 6.72199 6.24289 6.46101C6.32471 6.20003 6.49654 6.01246 6.75836 5.90643H6.79926L9.81019 5.07457C10.1784 4.94408 10.5466 4.98485 10.9148 5.1969L17.1412 8.59781C17.2966 8.67936 17.3948 8.80169 17.4357 8.97296C17.4766 9.14423 17.4521 9.29918 17.3784 9.42967C17.2966 9.58463 17.1821 9.69064 17.0266 9.74773C16.8712 9.80482 16.7075 9.78852 16.5521 9.70696L10.3256 6.27345C10.3011 6.24898 10.252 6.24898 10.1702 6.27345L7.91198 6.90142L14.0484 12.8632C14.1057 12.9447 14.1466 13.0344 14.1875 13.1405C14.2284 13.2465 14.2366 13.3525 14.212 13.4586C14.1548 13.6706 14.0321 13.8174 13.8193 13.8908L7.87108 16.0602C7.63381 16.1173 7.44563 16.0847 7.31472 15.9786L3.1992 12.9366L1.37466 13.6053L3.95198 18.148C4.42652 19.0207 5.09742 19.5916 5.97288 19.8689C6.84834 20.1462 7.83835 20.0891 8.94291 19.6894L14.8993 17.6342Z"></path></svg>
+                        Vuelos
+                    </p>
+
+                    <div class="input-group mb-3">
+                        <label for="exampleDataList" class="form-label">Origen</label>
+
+                        <select class="form-control">
+
+                            @*@foreach (Tb_departamento departamento in Model.Departamentos)
+                                {
+                                <option value=@Html.DisplayFor(modelItem => departamento.nombre)>@Html.DisplayFor(modelItem => departamento.nombre)</option>
+                                }*@
+
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="exampleDataList" class="form-label">Destino</label>
+                        <select class="form-control">
+
+                            @*@foreach (Tb_departamento departamento in Model.Departamentos)
+                                {
+                                <option value=@Html.DisplayFor(modelItem => departamento.nombre)>@Html.DisplayFor(modelItem => departamento.nombre)</option>
+                                }*@
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                    <button class="btn btn-primary">Buscar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="container">
+            <div class="row cards">
+
+                @foreach (var vuelos in ViewBag.ListarVuelos)
+
+                {
+
+                    <div class="card">
+                        <div class="card-image" style="background-image: url(@vuelos.Foto)"></div>
+                        <div class="badge">
+                            <span>@vuelos.Tipo_Vuelo</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>@vuelos.Nombre_departamentoDestino</h3>
+                            <p>S/. @vuelos.Precio</p>
+                            <small>@vuelos.Nombre_Aerolinea</small>
+                            <small>@vuelos.NombreAeropuertoOrigen</small>
+                        </div>
+
+                        <a href="https://asp.net" class="btn btn-primary btn-lg">Generar reserva</a>
+
+                    </div>
+
+                }
+                @*@foreach (usp_ListarVuelos_Result vuelo in Model.Vuelos)
+        {
+        <div class="card">
+            <div class="card-image" style="background-image: url(@Html.DisplayFor(modelItem => vuelo.Imagen))"></div>
+            <div class="badge">
+                <span>@Html.DisplayFor(modelItem => vuelo.Tipo_vuelo)</span>
+            </div>
+            <div class="card-content">
+                <h3>@Html.DisplayFor(modelItem => vuelo.Departamento)</h3>
+                <p>S/. @Html.DisplayFor(modelItem => vuelo.precio)</p>
+                <small>@Html.DisplayFor(modelItem => vuelo.Aerolinea)</small>
+                <small>@Html.DisplayFor(modelItem => vuelo.Aeropuerto_Origen)</small>
+                <small>Asiento: @Html.DisplayFor(modelItem => vuelo.Letra) - @Html.DisplayFor(modelItem => vuelo.Fila)</small>
+            </div>
+
+            <a href="https://asp.net" class="btn btn-primary btn-lg">Generar reserva</a>
+
+        </div>
+        }*@
+
+
+            </div>
+        </div>
+
+    </div>

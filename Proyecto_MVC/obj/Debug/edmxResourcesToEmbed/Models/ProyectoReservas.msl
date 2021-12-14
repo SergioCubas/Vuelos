@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Agencia_BDModelStoreContainer" CdmEntityContainer="Agencia_BDEntities">
+    <EntitySetMapping Name="Tb_aerolinea">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_aerolinea">
+        <MappingFragment StoreEntitySet="Tb_aerolinea">
+          <ScalarProperty Name="idAerolinea" ColumnName="idAerolinea" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_aeropuerto">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_aeropuerto">
+        <MappingFragment StoreEntitySet="Tb_aeropuerto">
+          <ScalarProperty Name="idAeropuerto" ColumnName="idAeropuerto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_asiento">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_asiento">
+        <MappingFragment StoreEntitySet="Tb_asiento">
+          <ScalarProperty Name="idAsiento" ColumnName="idAsiento" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="fila" ColumnName="fila" />
+          <ScalarProperty Name="letra" ColumnName="letra" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_avion">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_avion">
+        <MappingFragment StoreEntitySet="Tb_avion">
+          <ScalarProperty Name="idAvion" ColumnName="idAvion" />
+          <ScalarProperty Name="capacidad" ColumnName="capacidad" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idAerolinea" ColumnName="idAerolinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_Destino">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_Destino">
+        <MappingFragment StoreEntitySet="Tb_Destino">
+          <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idAeropuerto" ColumnName="idAeropuerto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_pago">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_pago">
+        <MappingFragment StoreEntitySet="Tb_pago">
+          <ScalarProperty Name="idPago" ColumnName="idPago" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+          <ScalarProperty Name="num_comprobante" ColumnName="num_comprobante" />
+          <ScalarProperty Name="medio_pago" ColumnName="medio_pago" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idPasajero" ColumnName="idPasajero" />
+          <ScalarProperty Name="idReserva" ColumnName="idReserva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_pais">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_pais">
+        <MappingFragment StoreEntitySet="Tb_pais">
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_pasajero">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_pasajero">
+        <MappingFragment StoreEntitySet="Tb_pasajero">
+          <ScalarProperty Name="idPasajero" ColumnName="idPasajero" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apaterno" ColumnName="apaterno" />
+          <ScalarProperty Name="amaterno" ColumnName="amaterno" />
+          <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="F_Nacimiento" ColumnName="F_Nacimiento" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_reserva">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_reserva">
+        <MappingFragment StoreEntitySet="Tb_reserva">
+          <ScalarProperty Name="idReserva" ColumnName="idReserva" />
+          <ScalarProperty Name="F_Reserva" ColumnName="F_Reserva" />
+          <ScalarProperty Name="F_Salida" ColumnName="F_Salida" />
+          <ScalarProperty Name="F_Llegada" ColumnName="F_Llegada" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idPasajero" ColumnName="idPasajero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_vuelo">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_vuelo">
+        <MappingFragment StoreEntitySet="Tb_vuelo">
+          <ScalarProperty Name="idVuelo" ColumnName="idVuelo" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idAeropuerto" ColumnName="idAeropuerto" />
+          <ScalarProperty Name="idReserva" ColumnName="idReserva" />
+          <ScalarProperty Name="idAsiento" ColumnName="idAsiento" />
+          <ScalarProperty Name="idAvion" ColumnName="idAvion" />
+          <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Agencia_BDModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Agencia_BDModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Agencia_BDModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Agencia_BDModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Agencia_BDModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Agencia_BDModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Agencia_BDModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Agencia_BDModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="usp_ListaPasajeroPorPais" FunctionName="Agencia_BDModel.Store.usp_ListaPasajeroPorPais">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListaPasajeroPorPais_Result">
+          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre completo" />
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarAsientosDisponiblesPorRucAerolinea" FunctionName="Agencia_BDModel.Store.usp_ListarAsientosDisponiblesPorRucAerolinea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListarAsientosDisponiblesPorRucAerolinea_Result">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="fila" ColumnName="fila" />
+          <ScalarProperty Name="letra" ColumnName="letra" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarPasajeros" FunctionName="Agencia_BDModel.Store.usp_ListarPasajeros">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListarPasajeros_Result">
+          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre completo" />
+          <ScalarProperty Name="Número_de_Documento" ColumnName="Número de Documento" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="F_Nacimiento" ColumnName="F_Nacimiento" />
+          <ScalarProperty Name="País" ColumnName="País" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarPasajerosPorFechaReserva" FunctionName="Agencia_BDModel.Store.usp_ListarPasajerosPorFechaReserva">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListarPasajerosPorFechaReserva_Result">
+          <ScalarProperty Name="Nombre_completo" ColumnName="Nombre completo" />
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="num_comprobante" ColumnName="num_comprobante" />
+          <ScalarProperty Name="F_Reserva" ColumnName="F_Reserva" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarVuelosDeAerolineasPorFechaRegistro" FunctionName="Agencia_BDModel.Store.usp_ListarVuelosDeAerolineasPorFechaRegistro">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListarVuelosDeAerolineasPorFechaRegistro_Result">
+          <ScalarProperty Name="idVuelo" ColumnName="idVuelo" />
+          <ScalarProperty Name="Aerolinea" ColumnName="Aerolinea" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="País" ColumnName="País" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Tb_departamento">
+      <EntityTypeMapping TypeName="Agencia_BDModel.Tb_departamento">
+        <MappingFragment StoreEntitySet="Tb_departamento">
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="F_Modificacion" ColumnName="F_Modificacion" />
+          <ScalarProperty Name="F_Registro" ColumnName="F_Registro" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_ListarVuelos" FunctionName="Agencia_BDModel.Store.usp_ListarVuelos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListarVuelos_Result">
+          <ScalarProperty Name="Aeropuerto_Origen" ColumnName="Aeropuerto Origen" />
+          <ScalarProperty Name="Aerolinea" ColumnName="Aerolinea" />
+          <ScalarProperty Name="Pais_Origen" ColumnName="Pais Origen" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Tipo_vuelo" ColumnName="Tipo vuelo" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="Aeropuerto_Destino" ColumnName="Aeropuerto Destino" />
+          <ScalarProperty Name="Pais_Origen1" ColumnName="Pais Origen1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

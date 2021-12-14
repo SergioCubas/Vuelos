@@ -1,0 +1,94 @@
+﻿@using Proyecto_MVC.Models;
+
+<style>
+    .form-inline {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+</style>
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <form class="form-inline" asp-controller="DetallePago" asp-action="Index" method="get">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control" name="dni" placeholder="Ingresa DNI">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+                </form>
+
+            </div>
+
+            <div class="col-12">
+                <table class="table">
+
+                    <tr>
+                        <th>
+                            Nombre Completo
+                        </th>
+                        <th>
+                            Tip. Documento
+                        </th>
+                        <th>
+                            Num. Documento
+                        </th>
+                        <th>
+                            F. Reserva
+                        </th>
+                        <th>
+                            Metodo de Pago
+                        </th>
+                        <th>
+                            Comprobante
+                        </th>
+                        <th>
+                            N° Comprobante
+                        </th>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            Precio
+                        </th>
+                    </tr>
+
+                    @foreach (usp_ListarPasajeroDetallePagoPorDocumento_Result detalle in Model.detalle)
+
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.Nombre_completo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.tipo_documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.num_documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.F_Reserva)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.medio_pago)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.tipo_comprobante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.num_comprobante)
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.Tipo_de_Vuelo)
+                    <td>
+                        @Html.DisplayFor(modelItem => detalle.precio)
+                    </td>
+
+                </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

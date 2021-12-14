@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Proyecto_MVC.Models.Tb_vuelo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimiento de vuelos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tb_aeropuerto.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tb_asiento.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tb_avion.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tb_Destino.idDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tb_reserva.observaciones)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.F_Registro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F_Modificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tb_aeropuerto.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tb_asiento.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tb_avion.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tb_Destino.idDestino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tb_reserva.observaciones)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idVuelo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idVuelo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idVuelo })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Volver", "Mantenimiento", "Home")
+</div>

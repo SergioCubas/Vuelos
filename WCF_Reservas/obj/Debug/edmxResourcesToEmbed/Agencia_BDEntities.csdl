@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Agencia_BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tb_aerolinea">
+    <Key>
+      <PropertyRef Name="idAerolinea" />
+    </Key>
+    <Property Name="idAerolinea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ruc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <NavigationProperty Name="Tb_avion" Relationship="Self.FK__Tb_avion__idAero__59FA5E80" FromRole="Tb_aerolinea" ToRole="Tb_avion" />
+  </EntityType>
+  <EntityType Name="Tb_aeropuerto">
+    <Key>
+      <PropertyRef Name="idAeropuerto" />
+    </Key>
+    <Property Name="idAeropuerto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idPais" Type="Int32" />
+    <NavigationProperty Name="Tb_pais" Relationship="Self.FK__Tb_aeropu__idPai__45F365D3" FromRole="Tb_aeropuerto" ToRole="Tb_pais" />
+    <NavigationProperty Name="Tb_Destino" Relationship="Self.FK__Tb_Destin__idAer__628FA481" FromRole="Tb_aeropuerto" ToRole="Tb_Destino" />
+    <NavigationProperty Name="Tb_vuelo" Relationship="Self.FK__Tb_vuelo__idAero__656C112C" FromRole="Tb_aeropuerto" ToRole="Tb_vuelo" />
+  </EntityType>
+  <EntityType Name="Tb_asiento">
+    <Key>
+      <PropertyRef Name="idAsiento" />
+    </Key>
+    <Property Name="idAsiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fila" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="letra" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <NavigationProperty Name="Tb_vuelo" Relationship="Self.FK__Tb_vuelo__idAsie__6754599E" FromRole="Tb_asiento" ToRole="Tb_vuelo" />
+  </EntityType>
+  <EntityType Name="Tb_avion">
+    <Key>
+      <PropertyRef Name="idAvion" />
+    </Key>
+    <Property Name="idAvion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="capacidad" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idAerolinea" Type="Int32" />
+    <NavigationProperty Name="Tb_aerolinea" Relationship="Self.FK__Tb_avion__idAero__59FA5E80" FromRole="Tb_avion" ToRole="Tb_aerolinea" />
+    <NavigationProperty Name="Tb_vuelo" Relationship="Self.FK__Tb_vuelo__idAvio__68487DD7" FromRole="Tb_avion" ToRole="Tb_vuelo" />
+  </EntityType>
+  <EntityType Name="Tb_departamento">
+    <Key>
+      <PropertyRef Name="id_departamento" />
+    </Key>
+    <Property Name="id_departamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="foto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tb_pais" Relationship="Self.FK__Tb_pais__id_depa__3F466844" FromRole="Tb_departamento" ToRole="Tb_pais" />
+  </EntityType>
+  <EntityType Name="Tb_Destino">
+    <Key>
+      <PropertyRef Name="idDestino" />
+    </Key>
+    <Property Name="idDestino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idAeropuerto" Type="Int32" />
+    <NavigationProperty Name="Tb_aeropuerto" Relationship="Self.FK__Tb_Destin__idAer__628FA481" FromRole="Tb_Destino" ToRole="Tb_aeropuerto" />
+    <NavigationProperty Name="Tb_vuelo" Relationship="Self.FK__Tb_vuelo__idDest__693CA210" FromRole="Tb_Destino" ToRole="Tb_vuelo" />
+  </EntityType>
+  <EntityType Name="Tb_pago">
+    <Key>
+      <PropertyRef Name="idPago" />
+    </Key>
+    <Property Name="idPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="tipo_comprobante" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="num_comprobante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="medio_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idPasajero" Type="Int32" />
+    <Property Name="idReserva" Type="Int32" />
+    <Property Name="documento_pago" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Tb_pasajero" Relationship="Self.FK__Tb_pago__idPasaj__5070F446" FromRole="Tb_pago" ToRole="Tb_pasajero" />
+    <NavigationProperty Name="Tb_reserva" Relationship="Self.FK__Tb_pago__idReser__5165187F" FromRole="Tb_pago" ToRole="Tb_reserva" />
+  </EntityType>
+  <EntityType Name="Tb_pais">
+    <Key>
+      <PropertyRef Name="idPais" />
+    </Key>
+    <Property Name="idPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="id_departamento" Type="Int32" />
+    <NavigationProperty Name="Tb_aeropuerto" Relationship="Self.FK__Tb_aeropu__idPai__45F365D3" FromRole="Tb_pais" ToRole="Tb_aeropuerto" />
+    <NavigationProperty Name="Tb_departamento" Relationship="Self.FK__Tb_pais__id_depa__3F466844" FromRole="Tb_pais" ToRole="Tb_departamento" />
+    <NavigationProperty Name="Tb_pasajero" Relationship="Self.FK__Tb_pasaje__idPai__4BAC3F29" FromRole="Tb_pais" ToRole="Tb_pasajero" />
+  </EntityType>
+  <EntityType Name="Tb_pasajero">
+    <Key>
+      <PropertyRef Name="idPasajero" />
+    </Key>
+    <Property Name="idPasajero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_documento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="num_documento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="F_Nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idPais" Type="Int32" />
+    <NavigationProperty Name="Tb_pago" Relationship="Self.FK__Tb_pago__idPasaj__5070F446" FromRole="Tb_pasajero" ToRole="Tb_pago" />
+    <NavigationProperty Name="Tb_pais" Relationship="Self.FK__Tb_pasaje__idPai__4BAC3F29" FromRole="Tb_pasajero" ToRole="Tb_pais" />
+    <NavigationProperty Name="Tb_reserva" Relationship="Self.FK_idPasajero" FromRole="Tb_pasajero" ToRole="Tb_reserva" />
+  </EntityType>
+  <EntityType Name="Tb_reserva">
+    <Key>
+      <PropertyRef Name="idReserva" />
+    </Key>
+    <Property Name="idReserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Reserva" Type="DateTime" Precision="3" />
+    <Property Name="F_Salida" Type="DateTime" Precision="3" />
+    <Property Name="F_Llegada" Type="DateTime" Precision="3" />
+    <Property Name="observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idPasajero" Type="Int32" />
+    <NavigationProperty Name="Tb_pago" Relationship="Self.FK__Tb_pago__idReser__5165187F" FromRole="Tb_reserva" ToRole="Tb_pago" />
+    <NavigationProperty Name="Tb_pasajero" Relationship="Self.FK_idPasajero" FromRole="Tb_reserva" ToRole="Tb_pasajero" />
+    <NavigationProperty Name="Tb_vuelo" Relationship="Self.FK__Tb_vuelo__idRese__66603565" FromRole="Tb_reserva" ToRole="Tb_vuelo" />
+  </EntityType>
+  <EntityType Name="Tb_vuelo">
+    <Key>
+      <PropertyRef Name="idVuelo" />
+    </Key>
+    <Property Name="idVuelo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Registro" Type="DateTime" Precision="3" />
+    <Property Name="F_Modificacion" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="Int32" />
+    <Property Name="idAeropuerto" Type="Int32" />
+    <Property Name="idReserva" Type="Int32" />
+    <Property Name="idAsiento" Type="Int32" />
+    <Property Name="idAvion" Type="Int32" />
+    <Property Name="idDestino" Type="Int32" />
+    <NavigationProperty Name="Tb_aeropuerto" Relationship="Self.FK__Tb_vuelo__idAero__656C112C" FromRole="Tb_vuelo" ToRole="Tb_aeropuerto" />
+    <NavigationProperty Name="Tb_asiento" Relationship="Self.FK__Tb_vuelo__idAsie__6754599E" FromRole="Tb_vuelo" ToRole="Tb_asiento" />
+    <NavigationProperty Name="Tb_avion" Relationship="Self.FK__Tb_vuelo__idAvio__68487DD7" FromRole="Tb_vuelo" ToRole="Tb_avion" />
+    <NavigationProperty Name="Tb_Destino" Relationship="Self.FK__Tb_vuelo__idDest__693CA210" FromRole="Tb_vuelo" ToRole="Tb_Destino" />
+    <NavigationProperty Name="Tb_reserva" Relationship="Self.FK__Tb_vuelo__idRese__66603565" FromRole="Tb_vuelo" ToRole="Tb_reserva" />
+  </EntityType>
+  <Association Name="FK__Tb_avion__idAero__59FA5E80">
+    <End Role="Tb_aerolinea" Type="Self.Tb_aerolinea" Multiplicity="0..1" />
+    <End Role="Tb_avion" Type="Self.Tb_avion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aerolinea">
+        <PropertyRef Name="idAerolinea" />
+      </Principal>
+      <Dependent Role="Tb_avion">
+        <PropertyRef Name="idAerolinea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_aeropu__idPai__45F365D3">
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="0..1" />
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="Tb_aeropuerto">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_Destin__idAer__628FA481">
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="0..1" />
+    <End Role="Tb_Destino" Type="Self.Tb_Destino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aeropuerto">
+        <PropertyRef Name="idAeropuerto" />
+      </Principal>
+      <Dependent Role="Tb_Destino">
+        <PropertyRef Name="idAeropuerto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAero__656C112C">
+    <End Role="Tb_aeropuerto" Type="Self.Tb_aeropuerto" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_aeropuerto">
+        <PropertyRef Name="idAeropuerto" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAeropuerto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAsie__6754599E">
+    <End Role="Tb_asiento" Type="Self.Tb_asiento" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_asiento">
+        <PropertyRef Name="idAsiento" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAsiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idAvio__68487DD7">
+    <End Role="Tb_avion" Type="Self.Tb_avion" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_avion">
+        <PropertyRef Name="idAvion" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idAvion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pais__id_depa__3F466844">
+    <End Role="Tb_departamento" Type="Self.Tb_departamento" Multiplicity="0..1" />
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_departamento">
+        <PropertyRef Name="id_departamento" />
+      </Principal>
+      <Dependent Role="Tb_pais">
+        <PropertyRef Name="id_departamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idDest__693CA210">
+    <End Role="Tb_Destino" Type="Self.Tb_Destino" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_Destino">
+        <PropertyRef Name="idDestino" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idDestino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pago__idPasaj__5070F446">
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="0..1" />
+    <End Role="Tb_pago" Type="Self.Tb_pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pasajero">
+        <PropertyRef Name="idPasajero" />
+      </Principal>
+      <Dependent Role="Tb_pago">
+        <PropertyRef Name="idPasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pago__idReser__5165187F">
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="0..1" />
+    <End Role="Tb_pago" Type="Self.Tb_pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_reserva">
+        <PropertyRef Name="idReserva" />
+      </Principal>
+      <Dependent Role="Tb_pago">
+        <PropertyRef Name="idReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_pasaje__idPai__4BAC3F29">
+    <End Role="Tb_pais" Type="Self.Tb_pais" Multiplicity="0..1" />
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pais">
+        <PropertyRef Name="idPais" />
+      </Principal>
+      <Dependent Role="Tb_pasajero">
+        <PropertyRef Name="idPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_idPasajero">
+    <End Role="Tb_pasajero" Type="Self.Tb_pasajero" Multiplicity="0..1" />
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_pasajero">
+        <PropertyRef Name="idPasajero" />
+      </Principal>
+      <Dependent Role="Tb_reserva">
+        <PropertyRef Name="idPasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tb_vuelo__idRese__66603565">
+    <End Role="Tb_reserva" Type="Self.Tb_reserva" Multiplicity="0..1" />
+    <End Role="Tb_vuelo" Type="Self.Tb_vuelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tb_reserva">
+        <PropertyRef Name="idReserva" />
+      </Principal>
+      <Dependent Role="Tb_vuelo">
+        <PropertyRef Name="idReserva" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Agencia_BDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tb_aerolinea" EntityType="Self.Tb_aerolinea" />
+    <EntitySet Name="Tb_aeropuerto" EntityType="Self.Tb_aeropuerto" />
+    <EntitySet Name="Tb_asiento" EntityType="Self.Tb_asiento" />
+    <EntitySet Name="Tb_avion" EntityType="Self.Tb_avion" />
+    <EntitySet Name="Tb_departamento" EntityType="Self.Tb_departamento" />
+    <EntitySet Name="Tb_Destino" EntityType="Self.Tb_Destino" />
+    <EntitySet Name="Tb_pago" EntityType="Self.Tb_pago" />
+    <EntitySet Name="Tb_pais" EntityType="Self.Tb_pais" />
+    <EntitySet Name="Tb_pasajero" EntityType="Self.Tb_pasajero" />
+    <EntitySet Name="Tb_reserva" EntityType="Self.Tb_reserva" />
+    <EntitySet Name="Tb_vuelo" EntityType="Self.Tb_vuelo" />
+    <AssociationSet Name="FK__Tb_avion__idAero__59FA5E80" Association="Self.FK__Tb_avion__idAero__59FA5E80">
+      <End Role="Tb_aerolinea" EntitySet="Tb_aerolinea" />
+      <End Role="Tb_avion" EntitySet="Tb_avion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_aeropu__idPai__45F365D3" Association="Self.FK__Tb_aeropu__idPai__45F365D3">
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_Destin__idAer__628FA481" Association="Self.FK__Tb_Destin__idAer__628FA481">
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+      <End Role="Tb_Destino" EntitySet="Tb_Destino" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAero__656C112C" Association="Self.FK__Tb_vuelo__idAero__656C112C">
+      <End Role="Tb_aeropuerto" EntitySet="Tb_aeropuerto" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAsie__6754599E" Association="Self.FK__Tb_vuelo__idAsie__6754599E">
+      <End Role="Tb_asiento" EntitySet="Tb_asiento" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idAvio__68487DD7" Association="Self.FK__Tb_vuelo__idAvio__68487DD7">
+      <End Role="Tb_avion" EntitySet="Tb_avion" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pais__id_depa__3F466844" Association="Self.FK__Tb_pais__id_depa__3F466844">
+      <End Role="Tb_departamento" EntitySet="Tb_departamento" />
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idDest__693CA210" Association="Self.FK__Tb_vuelo__idDest__693CA210">
+      <End Role="Tb_Destino" EntitySet="Tb_Destino" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pago__idPasaj__5070F446" Association="Self.FK__Tb_pago__idPasaj__5070F446">
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+      <End Role="Tb_pago" EntitySet="Tb_pago" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pago__idReser__5165187F" Association="Self.FK__Tb_pago__idReser__5165187F">
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+      <End Role="Tb_pago" EntitySet="Tb_pago" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_pasaje__idPai__4BAC3F29" Association="Self.FK__Tb_pasaje__idPai__4BAC3F29">
+      <End Role="Tb_pais" EntitySet="Tb_pais" />
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_idPasajero" Association="Self.FK_idPasajero">
+      <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tb_vuelo__idRese__66603565" Association="Self.FK__Tb_vuelo__idRese__66603565">
+      <End Role="Tb_reserva" EntitySet="Tb_reserva" />
+      <End Role="Tb_vuelo" EntitySet="Tb_vuelo" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="usp_ListaPasajeroPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListaPasajeroPorPais_Result)">
+      <Parameter Name="pais" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarAerolineaPaisPorDepartamento" ReturnType="Collection(Agencia_BDModel.usp_ListarAerolineaPaisPorDepartamento_Result)">
+      <Parameter Name="departamento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarAerolineaReservaPaisPorFecha" ReturnType="Collection(Agencia_BDModel.usp_ListarAerolineaReservaPaisPorFecha_Result)">
+      <Parameter Name="finicio" Mode="In" Type="String" />
+      <Parameter Name="ffin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarAsientosDisponiblesPorRucAerolinea" ReturnType="Collection(Agencia_BDModel.usp_ListarAsientosDisponiblesPorRucAerolinea_Result)">
+      <Parameter Name="ruc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajeroDetallePagoPorDocumento" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajeroDetallePagoPorDocumento_Result)">
+      <Parameter Name="documento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajeros" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajeros_Result)" />
+    <FunctionImport Name="usp_ListarPasajerosPorFechaReserva" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorFechaReserva_Result)">
+      <Parameter Name="finicio" Mode="In" Type="String" />
+      <Parameter Name="ffin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarReservasPorAerolinea" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorAerolinea_Result)">
+      <Parameter Name="aerolinea" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarVuelos" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelos_Result)" />
+    <FunctionImport Name="usp_ListarVuelosDeAerolineasPorFechaRegistro" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelosDeAerolineasPorFechaRegistro_Result)">
+      <Parameter Name="finicio" Mode="In" Type="String" />
+      <Parameter Name="ffin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajerosPorDepartamento" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorDepartamento_Result)">
+      <Parameter Name="departamento" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajerosPorGenero" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorGenero_Result)">
+      <Parameter Name="genero" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajerosPorGeneroO" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorGeneroO_Result)">
+      <Parameter Name="genero" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ListarPasajerosPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorPais_Result)">
+      <Parameter Name="Pais" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_ListaPasajeroPorPais_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="num_documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarAerolineaPaisPorDepartamento_Result">
+    <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="Pais" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarAerolineaReservaPaisPorFecha_Result">
+    <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="Pais" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="F_Reserva" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Salida" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Llegada" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarAsientosDisponiblesPorRucAerolinea_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ruc" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="codigo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="tipo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fila" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="letra" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="precio" Nullable="false" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajeroDetallePagoPorDocumento_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="tipo_documento" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="num_documento" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="F_Reserva" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Salida" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Llegada" Nullable="true" Precision="23" />
+    <Property Type="String" Name="medio_pago" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="tipo_comprobante" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="num_comprobante" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tipo_de_Vuelo" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="precio" Nullable="false" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajeros_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Número_de_Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="F_Nacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajerosPorFechaReserva_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="num_documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="num_comprobante" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="F_Reserva" Nullable="true" Precision="23" />
+    <Property Type="String" Name="observaciones" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarReservasPorAerolinea_Result">
+    <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="DateTime" Name="F_Reserva" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Salida" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="F_Llegada" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarVuelos_Result">
+    <Property Type="String" Name="Aeropuerto_Origen" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Pais_Origen" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Imagen" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Tipo_vuelo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fila" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="Letra" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="precio" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Aeropuerto_Destino" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Pais_Destino" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarVuelosDeAerolineasPorFechaRegistro_Result">
+    <Property Type="Int32" Name="idVuelo" Nullable="false" />
+    <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Destino" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="F_Registro" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajerosPorDepartamento_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Número_de_Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="F_Nacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajerosPorGenero_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Número_de_Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero1" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="F_Nacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajerosPorGeneroO_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Número_de_Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="F_Nacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ListarPasajerosPorPais_Result">
+    <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Número_de_Documento" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="genero" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="F_Nacimiento" Nullable="true" Precision="23" />
+    <Property Type="String" Name="País" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

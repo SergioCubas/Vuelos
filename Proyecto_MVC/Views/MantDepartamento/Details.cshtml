@@ -1,0 +1,50 @@
+﻿@model Proyecto_MVC.Models.Tb_departamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_departamento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

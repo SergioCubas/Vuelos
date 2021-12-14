@@ -1,0 +1,122 @@
+﻿@model Proyecto_MVC.Models.Tb_pasajero
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_pasajero</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_documento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_documento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_documento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Registro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Registro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Modificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Modificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tb_pais.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tb_pais.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPasajero }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

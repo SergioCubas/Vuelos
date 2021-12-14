@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<body>
+    <style>
+        .container-table {
+            margin-top: 80px;
+        }
+
+            .container-table h3 {
+                font-size: 3rem;
+                font-style: italic;
+                line-height: 2rem;
+                font-weight: bold;
+                color: rgb(27, 0, 136);
+                margin-bottom: 30px;
+            }
+    </style>
+
+
+
+
+    <div class="row">
+        <div class="container">
+            <div class="row container-table">
+
+                <div class="col-12">
+                    <h3>LISTADO DE RESERVAS</h3>
+                </div>
+                @using (Html.BeginForm("Buscar", "Reservas"))
+
+                {
+
+                    <table cellpading="2" cellspacing="2" border="1" width="600">
+
+                        <tr>
+
+                            <th>Seleccione tipo de criterio</th>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+
+                                <input type="radio" name="condicion" value="PorFechaSalida" />
+
+                                <span>Por fecha de salida</span>
+
+                            </td>
+                            <td>
+
+                                <input type="radio" name="condicion" value="PorFechaLlegada" />
+
+                                <span>Por fecha de llegada</span>
+
+                            </td>
+                            <td>
+
+                                <input type="radio" name="condicion" value="PorCiudadOrigen" />
+
+                                <span>Por Ciudad de origen</span>
+
+                            </td>
+
+                            <td>
+
+                                <input type="radio" name="condicion" value="PorCiudadDestino" />
+
+                                <span>Por Ciudad de destino</span>
+
+                            </td>
+
+                            <td>
+
+                                <input type="radio" name="condicion" value="PorDni" />
+
+                                <span>Por Dni</span>
+
+                            </td>
+                            <td>
+
+                                <input type="radio" name="condicion" value="Todas" checked="true" />
+
+                                <span>Todas</span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <span>Fecha inicio</span>
+                                <input type="date" name="criterio1" />
+                            </td>
+                            <td>
+                                <span>Fecha fin</span>
+                                <input type="date" name="criterio2" />
+                            </td>
+                            
+                            <td>
+
+                                @Html.DropDownList("cboCiudadOrigen", (IEnumerable<SelectListItem>)ViewBag.ListarCiudadOrigen)
+
+                            </td>
+                            <td>
+
+                                @Html.DropDownList("cboCiudadDestino", (IEnumerable<SelectListItem>)ViewBag.ListarCiudadDestino)
+
+                            </td>
+                            <td>
+                                <input type="text" name="criterio" />
+                            </td>
+
+                            <td>
+
+                                <input type="submit" name="Buscar" />
+
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+
+
+
+                }
+
+                <br />
+
+                <br />
+
+
+                <div class="col-12">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre Pasajero</th>
+                                <th scope="col">Dni Pasajero</th>
+                                <th scope="col">Teléfono Pasajero</th>
+                                <th scope="col">Tipo Asiento</th>
+                                <th scope="col">N° Asiento</th>
+                                <th scope="col">Precio Asiento</th>
+                                <th scope="col">Aerolinea</th>
+                                <th scope="col">Aeropuerto Origen</th>
+                                <th scope="col">País Origen</th>
+                                <th scope="col">Ciudad Origen</th>
+                                <th scope="col">Fecha Salida</th>
+                                <th scope="col">Aeropueto destino</th>
+                                <th scope="col">País destino</th>
+                                <th scope="col">Ciudad destino</th>
+                                <th scope="col">Fecha Llegada</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var reservas in ViewBag.ListarReservas)
+
+                            {
+
+                            <tr>
+                                <th>@reservas.Nombre</th>
+                                <th>@reservas.NumDocumento</th>
+                                <th>@reservas.Telefono</th>
+                                <th>@reservas.Tipo_asiento</th>
+                                <th>@reservas.Asiento</th>
+                                <th>@reservas.Precio</th>
+                                <th>@reservas.Nombre_Aerolinea</th>
+                                <th>@reservas.NombreAeropuertoOrigen</th>
+                                <th>@reservas.Nombre_PaisOrigen</th>
+                                <th>@reservas.Nombre_ciudadOrigen</th>
+                                <th>@reservas.Fecha_Salida</th>
+                                <th>@reservas.NombreAeropuertoDestino</th>
+                                <th>@reservas.Nombre_PaisDestino</th>
+                                <th>@reservas.Nombre_ciudadDestino</th>
+                                <th>@reservas.Fecha_Llegada</th>
+
+
+
+                            </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServicioPasajero" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCF_Reservas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioPasajero_GetPasajeroDetallePagoPorDni_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasajeroDetallePagoPorDni" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_GetPasajeroDetallePagoPorDni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasajeroDetallePagoPorDniResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorGenero_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorGenero" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorGenero_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorGeneroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorPais_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorPais" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajerosPorPais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosPorPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajeros_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajeros" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPasajeros_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPasajerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPaises" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarDepartamentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_ListarDepartamentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_GetContarPasajerosPorPais_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContarPasajerosPorPais" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPasajero_GetContarPasajerosPorPais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContarPasajerosPorPaisResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioPasajero">
+    <wsdl:operation name="GetPasajeroDetallePagoPorDni">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/GetPasajeroDetallePagoPorDni" message="tns:IServicioPasajero_GetPasajeroDetallePagoPorDni_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/GetPasajeroDetallePagoPorDniResponse" message="tns:IServicioPasajero_GetPasajeroDetallePagoPorDni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorDepartamento" message="tns:IServicioPasajero_ListarPasajerosPorDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorDepartamentoResponse" message="tns:IServicioPasajero_ListarPasajerosPorDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorGenero">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorGenero" message="tns:IServicioPasajero_ListarPasajerosPorGenero_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorGeneroResponse" message="tns:IServicioPasajero_ListarPasajerosPorGenero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorPais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorPais" message="tns:IServicioPasajero_ListarPasajerosPorPais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosPorPaisResponse" message="tns:IServicioPasajero_ListarPasajerosPorPais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajeros">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajeros" message="tns:IServicioPasajero_ListarPasajeros_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPasajerosResponse" message="tns:IServicioPasajero_ListarPasajeros_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPaises" message="tns:IServicioPasajero_ListarPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarPaisesResponse" message="tns:IServicioPasajero_ListarPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/ListarDepartamentos" message="tns:IServicioPasajero_ListarDepartamentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/ListarDepartamentosResponse" message="tns:IServicioPasajero_ListarDepartamentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContarPasajerosPorPais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPasajero/GetContarPasajerosPorPais" message="tns:IServicioPasajero_GetContarPasajerosPorPais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPasajero/GetContarPasajerosPorPaisResponse" message="tns:IServicioPasajero_GetContarPasajerosPorPais_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioPasajero" type="tns:IServicioPasajero">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPasajeroDetallePagoPorDni">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/GetPasajeroDetallePagoPorDni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarPasajerosPorDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorGenero">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarPasajerosPorGenero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajerosPorPais">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarPasajerosPorPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPasajeros">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarPasajeros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPaises">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarPaises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDepartamentos">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/ListarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContarPasajerosPorPais">
+      <soap:operation soapAction="http://tempuri.org/IServicioPasajero/GetContarPasajerosPorPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioPasajero">
+    <wsdl:port name="BasicHttpBinding_IServicioPasajero" binding="tns:BasicHttpBinding_IServicioPasajero">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCF_Reservas/ServicioPasajero/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
