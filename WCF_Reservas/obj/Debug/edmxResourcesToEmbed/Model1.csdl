@@ -539,6 +539,10 @@
       <Parameter Name="email" Mode="In" Type="String" />
       <Parameter Name="dni" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="usp_GenerarReserva">
+      <Parameter Name="idPasajero" Mode="In" Type="Int32" />
+      <Parameter Name="idReserva" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="usp_ListaPasajeroPorPais_Result">
     <Property Type="String" Name="Nombre_completo" Nullable="false" MaxLength="152" />

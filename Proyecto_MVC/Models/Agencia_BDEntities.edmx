@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Agencia_BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Agencia_BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -364,6 +364,10 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GenerarReserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPasajero" Type="int" Mode="In" />
+          <Parameter Name="idReserva" Type="int" Mode="In" />
+        </Function>
         <Function Name="usp_ListaPasajeroPorPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pais" Type="varchar" Mode="In" />
         </Function>
@@ -518,8 +522,7 @@
             <End Role="Tb_pasajero" EntitySet="Tb_pasajero" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Agencia_BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -980,53 +983,53 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="usp_ListaPasajeroPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListaPasajeroPorPais_Result)">
-            <Parameter Name="pais" Mode="In" Type="String" />
+          <Parameter Name="pais" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarAerolineaPaisPorDepartamento" ReturnType="Collection(Agencia_BDModel.usp_ListarAerolineaPaisPorDepartamento_Result)">
-            <Parameter Name="departamento" Mode="In" Type="String" />
+          <Parameter Name="departamento" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarAerolineaReservaPaisPorFecha" ReturnType="Collection(Agencia_BDModel.usp_ListarAerolineaReservaPaisPorFecha_Result)">
             <Parameter Name="finicio" Mode="In" Type="String" />
             <Parameter Name="ffin" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarAsientosDisponiblesPorRucAerolinea" ReturnType="Collection(Agencia_BDModel.usp_ListarAsientosDisponiblesPorRucAerolinea_Result)">
-            <Parameter Name="ruc" Mode="In" Type="String" />
+          <Parameter Name="ruc" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajeroDetallePagoPorDocumento" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajeroDetallePagoPorDocumento_Result)">
-            <Parameter Name="documento" Mode="In" Type="String" />
+          <Parameter Name="documento" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajeros" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajeros_Result)" />
           <FunctionImport Name="usp_ListarPasajerosPorDepartamento" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorDepartamento_Result)">
-            <Parameter Name="departamento" Mode="In" Type="String" />
+          <Parameter Name="departamento" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajerosPorFechaReserva" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorFechaReserva_Result)">
             <Parameter Name="finicio" Mode="In" Type="String" />
             <Parameter Name="ffin" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajerosPorGenero" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorGenero_Result)">
-            <Parameter Name="genero" Mode="In" Type="String" />
+          <Parameter Name="genero" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajerosPorGeneroO" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorGeneroO_Result)">
-            <Parameter Name="genero" Mode="In" Type="String" />
+          <Parameter Name="genero" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarPasajerosPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListarPasajerosPorPais_Result)">
-            <Parameter Name="Pais" Mode="In" Type="String" />
+          <Parameter Name="Pais" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservas" ReturnType="Collection(Agencia_BDModel.usp_ListarReservas_Result)" />
           <FunctionImport Name="usp_ListarReservasPorAerolinea" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorAerolinea_Result)">
-            <Parameter Name="aerolinea" Mode="In" Type="String" />
+          <Parameter Name="aerolinea" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservasPorCiudadDestino" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorCiudadDestino_Result)">
-            <Parameter Name="ciudad" Mode="In" Type="String" />
+          <Parameter Name="ciudad" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservasPorCiudadOrigen" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorCiudadOrigen_Result)">
-            <Parameter Name="ciudad" Mode="In" Type="String" />
+          <Parameter Name="ciudad" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservasPorCodigo" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorCodigo_Result)">
-            <Parameter Name="codigo" Mode="In" Type="Int32" />
+          <Parameter Name="codigo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservasPorDni" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorDni_Result)">
-            <Parameter Name="dni" Mode="In" Type="String" />
+          <Parameter Name="dni" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarReservasPorPorFechaLlegada" ReturnType="Collection(Agencia_BDModel.usp_ListarReservasPorPorFechaLlegada_Result)">
             <Parameter Name="Fecha1" Mode="In" Type="DateTime" />
@@ -1042,13 +1045,13 @@
             <Parameter Name="ffin" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarVuelosPorAerolinea" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelosPorAerolinea_Result)">
-            <Parameter Name="Aerolinea" Mode="In" Type="String" />
+          <Parameter Name="Aerolinea" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarVuelosPorCiudadDestino" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelosPorCiudadDestino_Result)">
-            <Parameter Name="Ciudad" Mode="In" Type="String" />
+          <Parameter Name="Ciudad" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarVuelosPorCiudadOrigen" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelosPorCiudadOrigen_Result)">
-            <Parameter Name="Ciudad" Mode="In" Type="String" />
+          <Parameter Name="Ciudad" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ListarVuelosPorFechaLlegada" ReturnType="Collection(Agencia_BDModel.usp_ListarVuelosPorFechaLlegada_Result)">
             <Parameter Name="Fecha1" Mode="In" Type="DateTime" />
@@ -1061,6 +1064,10 @@
           <FunctionImport Name="usp_Login" ReturnType="Collection(Agencia_BDModel.usp_Login_Result)">
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="dni" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GenerarReserva">
+            <Parameter Name="idPasajero" Mode="In" Type="Int32" />
+            <Parameter Name="idReserva" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_ListaPasajeroPorPais_Result">
@@ -2067,6 +2074,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GenerarReserva" FunctionName="Agencia_BDModel.Store.usp_GenerarReserva" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

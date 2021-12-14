@@ -58,3 +58,14 @@ C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.dll
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.dll.config
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\WCF_Reservas.pdb
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.dll
+C:\Users\user\Desktop\ISIL\Ciclo5\DesApp2\ProyectoFinal\Pry_Final\Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.pdb

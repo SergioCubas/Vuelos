@@ -406,5 +406,18 @@ namespace Proyecto_MVC.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Login_Result>("usp_Login", emailParameter, dniParameter);
         }
+    
+        public virtual int usp_GenerarReserva(Nullable<int> idPasajero, Nullable<int> idReserva)
+        {
+            var idPasajeroParameter = idPasajero.HasValue ?
+                new ObjectParameter("idPasajero", idPasajero) :
+                new ObjectParameter("idPasajero", typeof(int));
+    
+            var idReservaParameter = idReserva.HasValue ?
+                new ObjectParameter("idReserva", idReserva) :
+                new ObjectParameter("idReserva", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_GenerarReserva", idPasajeroParameter, idReservaParameter);
+        }
     }
 }
