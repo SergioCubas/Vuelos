@@ -364,6 +364,10 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GenerarReserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPasajero" Type="int" Mode="In" />
+          <Parameter Name="idReserva" Type="int" Mode="In" />
+        </Function>
         <Function Name="usp_ListaPasajeroPorPais" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pais" Type="varchar" Mode="In" />
         </Function>
@@ -979,6 +983,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="usp_GenerarReserva">
+            <Parameter Name="idPasajero" Mode="In" Type="Int32" />
+            <Parameter Name="idReserva" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="usp_ListaPasajeroPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListaPasajeroPorPais_Result)">
             <Parameter Name="pais" Mode="In" Type="String" />
           </FunctionImport>
@@ -1182,6 +1190,7 @@
           <Property Type="String" Name="Ciudad_Destino" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Imagen_Destino" Nullable="true" MaxLength="250" />
           <Property Type="DateTime" Name="Fecha_Llegada" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Estado_Reserva" Nullable="true" />
         </ComplexType>
         <ComplexType Name="usp_ListarReservasPorAerolinea_Result">
           <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
@@ -1338,6 +1347,7 @@
           <Property Type="Int32" Name="IdAsiento" Nullable="false" />
           <Property Type="Int32" Name="IdAvion" Nullable="false" />
           <Property Type="Int32" Name="IdDestino" Nullable="false" />
+          <Property Type="Int32" Name="Estado_Reserva" Nullable="true" />
         </ComplexType>
         <ComplexType Name="usp_ListarVuelosDeAerolineasPorFechaRegistro_Result">
           <Property Type="Int32" Name="idVuelo" Nullable="false" />
@@ -1604,6 +1614,7 @@
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Agencia_BDModel.Store.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Agencia_BDModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Agencia_BDModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="usp_GenerarReserva" FunctionName="Agencia_BDModel.Store.usp_GenerarReserva" />
           <FunctionImportMapping FunctionImportName="usp_ListaPasajeroPorPais" FunctionName="Agencia_BDModel.Store.usp_ListaPasajeroPorPais">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListaPasajeroPorPais_Result">
@@ -1769,6 +1780,7 @@
                 <ScalarProperty Name="Ciudad_Destino" ColumnName="Ciudad Destino" />
                 <ScalarProperty Name="Imagen_Destino" ColumnName="Imagen Destino" />
                 <ScalarProperty Name="Fecha_Llegada" ColumnName="Fecha Llegada" />
+                <ScalarProperty Name="Estado_Reserva" ColumnName="Estado Reserva" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1957,6 +1969,7 @@
                 <ScalarProperty Name="IdAsiento" ColumnName="IdAsiento" />
                 <ScalarProperty Name="IdAvion" ColumnName="IdAvion" />
                 <ScalarProperty Name="IdDestino" ColumnName="IdDestino" />
+                <ScalarProperty Name="Estado_Reserva" ColumnName="Estado Reserva" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

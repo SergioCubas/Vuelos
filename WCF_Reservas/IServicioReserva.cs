@@ -11,6 +11,10 @@ namespace WCF_Reservas
     [ServiceContract]
     public interface IServicioReserva
     {
+
+        [OperationContract]
+        void GenerarReserva(int idPasajero, int idReserva);
+
         [OperationContract]
         List<ReservaBE> ListarReservasPorCiudadOrigen(String ciudad);
 

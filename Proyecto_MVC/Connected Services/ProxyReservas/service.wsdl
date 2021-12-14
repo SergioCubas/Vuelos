@@ -7,6 +7,12 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WCF_Reservas" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IServicioReserva_GenerarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarReserva" />
+  </wsdl:message>
+  <wsdl:message name="IServicioReserva_GenerarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarReservaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServicioReserva_ListarReservasPorCiudadOrigen_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarReservasPorCiudadOrigen" />
   </wsdl:message>
@@ -50,6 +56,10 @@
     <wsdl:part name="parameters" element="tns:ListarDepartamentosResponse" />
   </wsdl:message>
   <wsdl:portType name="IServicioReserva">
+    <wsdl:operation name="GenerarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioReserva/GenerarReserva" message="tns:IServicioReserva_GenerarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioReserva/GenerarReservaResponse" message="tns:IServicioReserva_GenerarReserva_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarReservasPorCiudadOrigen">
       <wsdl:input wsaw:Action="http://tempuri.org/IServicioReserva/ListarReservasPorCiudadOrigen" message="tns:IServicioReserva_ListarReservasPorCiudadOrigen_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServicioReserva/ListarReservasPorCiudadOrigenResponse" message="tns:IServicioReserva_ListarReservasPorCiudadOrigen_OutputMessage" />
@@ -81,6 +91,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServicioReserva" type="tns:IServicioReserva">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerarReserva">
+      <soap:operation soapAction="http://tempuri.org/IServicioReserva/GenerarReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListarReservasPorCiudadOrigen">
       <soap:operation soapAction="http://tempuri.org/IServicioReserva/ListarReservasPorCiudadOrigen" style="document" />
       <wsdl:input>

@@ -32,5 +32,6 @@ namespace Proyecto_MVC.Models
         public string Ciudad_Destino { get; set; }
         public string Imagen_Destino { get; set; }
         public Nullable<System.DateTime> Fecha_Llegada { get; set; }
+        public Nullable<int> Estado_Reserva { get; set; }
     }
 }

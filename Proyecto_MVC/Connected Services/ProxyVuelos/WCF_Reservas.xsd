@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfVueloBE" nillable="true" type="tns:ArrayOfVueloBE" />
   <xs:complexType name="VueloBE">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="xs:int" />
       <xs:element minOccurs="0" name="Fecha_Llegada" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Fecha_Salida" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Fila" nillable="true" type="xs:string" />

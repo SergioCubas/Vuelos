@@ -483,6 +483,7 @@
     <Content Include="Views\Reservas\Index.cshtml" />
     <Content Include="Views\Session\Index.cshtml" />
     <Content Include="Views\Session\Logout.cshtml" />
+    <Content Include="Views\Home\Reserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

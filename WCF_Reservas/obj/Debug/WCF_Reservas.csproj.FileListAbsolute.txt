@@ -57,4 +57,3 @@ C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.CopyComplete
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.dll
 C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.pdb
-C:\Users\HP\Documents\SergioCubas\Proyecto-Reserva-Vuelos\WCF_Reservas\obj\Debug\WCF_Reservas.csproj.AssemblyReference.cache

@@ -69,7 +69,15 @@ namespace WCF_Reservas
         private Int32 idAvion;
         private Int32 idDestino;
 
+        private Int32 estado;
 
+
+        [DataMember]
+        public Int32 Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
 
         [DataMember]
         public Int32 IdDestino

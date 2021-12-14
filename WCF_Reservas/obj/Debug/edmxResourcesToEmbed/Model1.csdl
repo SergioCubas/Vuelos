@@ -456,6 +456,10 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="usp_GenerarReserva">
+      <Parameter Name="idPasajero" Mode="In" Type="Int32" />
+      <Parameter Name="idReserva" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="usp_ListaPasajeroPorPais" ReturnType="Collection(Agencia_BDModel.usp_ListaPasajeroPorPais_Result)">
       <Parameter Name="pais" Mode="In" Type="String" />
     </FunctionImport>
@@ -659,6 +663,7 @@
     <Property Type="String" Name="Ciudad_Destino" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="Imagen_Destino" Nullable="true" MaxLength="250" />
     <Property Type="DateTime" Name="Fecha_Llegada" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Estado_Reserva" Nullable="true" />
   </ComplexType>
   <ComplexType Name="usp_ListarReservasPorAerolinea_Result">
     <Property Type="String" Name="Aerolinea" Nullable="false" MaxLength="50" />
@@ -815,6 +820,7 @@
     <Property Type="Int32" Name="IdAsiento" Nullable="false" />
     <Property Type="Int32" Name="IdAvion" Nullable="false" />
     <Property Type="Int32" Name="IdDestino" Nullable="false" />
+    <Property Type="Int32" Name="Estado_Reserva" Nullable="true" />
   </ComplexType>
   <ComplexType Name="usp_ListarVuelosDeAerolineasPorFechaRegistro_Result">
     <Property Type="Int32" Name="idVuelo" Nullable="false" />

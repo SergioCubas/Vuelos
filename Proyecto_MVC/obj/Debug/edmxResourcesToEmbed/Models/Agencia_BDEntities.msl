@@ -181,6 +181,7 @@
     <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Agencia_BDModel.Store.sp_helpdiagrams" />
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Agencia_BDModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Agencia_BDModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="usp_GenerarReserva" FunctionName="Agencia_BDModel.Store.usp_GenerarReserva" />
     <FunctionImportMapping FunctionImportName="usp_ListaPasajeroPorPais" FunctionName="Agencia_BDModel.Store.usp_ListaPasajeroPorPais">
       <ResultMapping>
         <ComplexTypeMapping TypeName="Agencia_BDModel.usp_ListaPasajeroPorPais_Result">
@@ -346,6 +347,7 @@
           <ScalarProperty Name="Ciudad_Destino" ColumnName="Ciudad Destino" />
           <ScalarProperty Name="Imagen_Destino" ColumnName="Imagen Destino" />
           <ScalarProperty Name="Fecha_Llegada" ColumnName="Fecha Llegada" />
+          <ScalarProperty Name="Estado_Reserva" ColumnName="Estado Reserva" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -534,6 +536,7 @@
           <ScalarProperty Name="IdAsiento" ColumnName="IdAsiento" />
           <ScalarProperty Name="IdAvion" ColumnName="IdAvion" />
           <ScalarProperty Name="IdDestino" ColumnName="IdDestino" />
+          <ScalarProperty Name="Estado_Reserva" ColumnName="Estado Reserva" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

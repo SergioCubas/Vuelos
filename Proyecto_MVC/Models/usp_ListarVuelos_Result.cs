@@ -34,5 +34,6 @@ namespace Proyecto_MVC.Models
         public int IdAsiento { get; set; }
         public int IdAvion { get; set; }
         public int IdDestino { get; set; }
+        public Nullable<int> Estado_Reserva { get; set; }
     }
 }

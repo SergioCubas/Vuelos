@@ -144,6 +144,19 @@ namespace Proyecto_MVC.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
+        public virtual int usp_GenerarReserva(Nullable<int> idPasajero, Nullable<int> idReserva)
+        {
+            var idPasajeroParameter = idPasajero.HasValue ?
+                new ObjectParameter("idPasajero", idPasajero) :
+                new ObjectParameter("idPasajero", typeof(int));
+    
+            var idReservaParameter = idReserva.HasValue ?
+                new ObjectParameter("idReserva", idReserva) :
+                new ObjectParameter("idReserva", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_GenerarReserva", idPasajeroParameter, idReservaParameter);
+        }
+    
         public virtual ObjectResult<usp_ListaPasajeroPorPais_Result> usp_ListaPasajeroPorPais(string pais)
         {
             var paisParameter = pais != null ?

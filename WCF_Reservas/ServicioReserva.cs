@@ -12,6 +12,22 @@ namespace WCF_Reservas
     public class ServicioReserva : IServicioReserva
     {
 
+        public void GenerarReserva(int idPasajero, int idReserva)
+        {
+            Agencia_BDEntities agencia = new Agencia_BDEntities();
+
+            try
+            {
+                var query = agencia.usp_GenerarReserva(idPasajero, idReserva);
+
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         public List<ReservaBE> ListarReservas()
         {
             Agencia_BDEntities agencia = new Agencia_BDEntities();

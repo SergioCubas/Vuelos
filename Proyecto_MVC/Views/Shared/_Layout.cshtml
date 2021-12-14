@@ -127,6 +127,9 @@
         .nav__list li:hover > ul {
             display: block;
         }
+    .user-photo {
+        width: 35px;
+    }
     
 </style>
 
@@ -178,7 +181,9 @@
                         @if (Session["UserNombre"] != null)
                         {
                     <li class="nav-item dropdown" style="margin-left:40px;">
-                        <a href="#">Hola @Session["UserNombre"].ToString()</a>
+                        <a href="#">
+                        <img class="user-photo" src="https://cdn-icons.flaticon.com/png/512/2276/premium/2276400.png?token=exp=1639518275~hmac=bdb05a4011b56bc904ca01c7ae1c8ea7" />
+                        Hola @Session["UserNombre"].ToString()</a>
                         <ul>
                             <li><a class="dropdown-item" href="@Url.Action("Logout", "Session")">Cerrar sessión</a></li>
                         </ul>
@@ -203,5 +208,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+        setTimeout(function () {
+            $('.alert-success').hide(1000);
+        }, 4000);
+    </script>
 </body>
 </html>

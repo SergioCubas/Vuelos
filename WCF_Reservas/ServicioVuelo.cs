@@ -40,7 +40,8 @@ namespace WCF_Reservas
                     objVueloBE.Nombre_PaisDestino = resultado.Pais_Destino;
                     objVueloBE.Nombre_departamentoDestino = resultado.Ciudad_Destino;
                     objVueloBE.Fecha_Llegada = Convert.ToDateTime(resultado.Fecha_Llegada);
-
+                    objVueloBE.Estado = (int)resultado.Estado_Reserva;
+                    
                     objVueloBE.IdReserva = resultado.IdReserva;
                     objVueloBE.IdDepartamento = resultado.IdDepartamento;
                     objVueloBE.IdAeropuerto = resultado.IdAeropuerto;

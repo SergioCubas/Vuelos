@@ -779,6 +779,12 @@ namespace Proyecto_MVC.ProxyReservas {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyReservas.IServicioReserva")]
     public interface IServicioReserva {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioReserva/GenerarReserva", ReplyAction="http://tempuri.org/IServicioReserva/GenerarReservaResponse")]
+        void GenerarReserva(int idPasajero, int idReserva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioReserva/GenerarReserva", ReplyAction="http://tempuri.org/IServicioReserva/GenerarReservaResponse")]
+        System.Threading.Tasks.Task GenerarReservaAsync(int idPasajero, int idReserva);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioReserva/ListarReservasPorCiudadOrigen", ReplyAction="http://tempuri.org/IServicioReserva/ListarReservasPorCiudadOrigenResponse")]
         Proyecto_MVC.ProxyReservas.ReservaBE[] ListarReservasPorCiudadOrigen(string ciudad);
         
@@ -847,6 +853,14 @@ namespace Proyecto_MVC.ProxyReservas {
         
         public ServicioReservaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void GenerarReserva(int idPasajero, int idReserva) {
+            base.Channel.GenerarReserva(idPasajero, idReserva);
+        }
+        
+        public System.Threading.Tasks.Task GenerarReservaAsync(int idPasajero, int idReserva) {
+            return base.Channel.GenerarReservaAsync(idPasajero, idReserva);
         }
         
         public Proyecto_MVC.ProxyReservas.ReservaBE[] ListarReservasPorCiudadOrigen(string ciudad) {
